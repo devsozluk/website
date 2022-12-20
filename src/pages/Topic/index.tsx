@@ -63,7 +63,7 @@ const Topic: React.FC = () => {
         <div className="flex gap-x-3 text-xs font-bold mt-2">
           <span className="flex items-center gap-x-1">
             <AiOutlineEye size={16} />
-            {topic.views}
+            {topic.viewCount}
           </span>
         </div>
       </div>

@@ -1,4 +1,4 @@
-# DevLab Website
+# DevSözlük Website
 
 ## Available Scripts
 

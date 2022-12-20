@@ -12,7 +12,7 @@ const Sidebar: React.FC = () => {
   useEffect(() => {
     const getPopularTopics = async () => {
       setIsLoading(true);
-      const { data, errors } = await altogic.endpoint.get("/topics?sort=views:desc");
+      const { data, errors } = await altogic.endpoint.get("/topics?sort=viewCount:desc");
       setTopics(data.result);
       setIsLoading(false);
     };
@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
   }, [, location]);
 
   return (
-    <div className="w-1/4 flex flex-col space-y-2 ml-8">
+    <div className="w-1/4 flex flex-col space-y-3 ml-8">
       {isLoading ? (
         <div className="space-y-5">
           <TopicLoader />
@@ -29,8 +29,13 @@ const Sidebar: React.FC = () => {
         </div>
       ) : (
         topics?.map((topic, index) => (
-          <Link key={index} className="p-1 hover:bg-primary hover:text-white transition-all rounded" to={"/konu/" + topic.slug}>
+          <Link
+            key={index}
+            className="text-base px-2 py-1 break-words hover:bg-buttonPrimary hover:text-white transition-all rounded flex justify-between items-center"
+            to={"/konu/" + topic.slug}
+          >
             {topic.title}
+            <span className="text-sm ml-5">{topic?.entryCount}</span>
           </Link>
         ))
       )}

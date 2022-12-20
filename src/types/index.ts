@@ -28,7 +28,8 @@ export interface ITopic {
   author?: User;
   createdAt: Date;
   updatedAt: Date;
-  views: number;
+  viewCount: number;
+  entryCount: number;
 }
 
 export interface IEntry {

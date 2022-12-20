@@ -7,9 +7,8 @@ const Layout: React.FC = () => {
   return (
     <>
       <Header />
-      <main className="flex justify-between py-5 h-[calc(100vh-70px)] overflow-auto">
+      <main className="flex justify-between py-5 overflow-auto space-x-20">
         <Sidebar />
-        <div className="w-[10px] h-full bg-[#3D3D3D] rounded-sm mx-10"></div>
         <div className="w-full h-full">
           <Outlet />
         </div>
